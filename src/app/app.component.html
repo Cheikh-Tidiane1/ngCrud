@@ -26,18 +26,26 @@
 </nav>
 <div class="container">
   <div id="alertMsg">
-    <p>{{message}}</p>
+    <p>{{ message }}</p>
   </div>
   <div id="home">
-    <app-article titreArticle="Vélo" [prixArticle]="prix1" (info)="onAffiche($event)"></app-article>
-    <app-article [titreArticle]="'Iphone'" [prixArticle]="prix2" (info)="onAffiche($event)"></app-article>
-    <app-article [titreArticle]="'MacBook Air'" [prixArticle]="prix3" (info)="onAffiche($event)"></app-article>
+    @for(item of listeArticle ; track item.id){
+    <app-article
+      [titreArticle]="item.titreArticle"
+      [prixArticle]="item.prixArticle"
+      [description]="item.description"
+      [urlImg]="item.urlImg"
+      [altImg]="item.altImg"
+      [dispo]="item.dispo"
+      (info)="onAffiche($event)"
+    ></app-article>
+    }
   </div>
 </div>
 
 <!-- Pied de page -->
-<footer class="py-5 bg-primary">
+<!-- <footer class="py-5 bg-primary">
   <div class="container">
     <p class="m-0 text-center text-white">Copyright &copy; Boutik Bi</p>
   </div>
-</footer>
+</footer> -->

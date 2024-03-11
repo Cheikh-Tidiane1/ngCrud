@@ -1,30 +1,42 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css',
 })
 export class ArticleComponent implements OnInit {
   constructor() {}
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  @Input() titreArticle!: string ;
-  @Input() prixArticle!: number ;
-  // titreArticle: string = 'Vélo';
-  // prixArticle: number = 1000;
-  urlImg: string = 'https://via.placeholder.com/400x250';
-  altImg: string = 'Vélo';
+  @Input() titreArticle: string;
+  @Input() prixArticle: number;
+  @Input() urlImg: string;
+  @Input() altImg: string;
+  @Input() description: string;
+  @Input() dispo: boolean;
   totalLike: number = 0;
-  comment: string = "ceci est un commentaire"
-  @Output() info  = new EventEmitter<string>()
+  color: string;
+  like: boolean = true;
+  comment: string = 'ceci est un commentaire';
+  @Output() info = new EventEmitter<string>();
 
   onLike() {
-    this.totalLike++;
-    this.info.emit(this.titreArticle)
+    if(this.like){
+      this.totalLike++;
+      this.like = false;
+    }else{
+      this.totalLike--;
+      this.like = true;
+    }
+    this.info.emit(this.titreArticle);
+  }
+
+  getColor(): string {
+    return (this.color = this.dispo ? 'green' : 'red');
   }
 }
