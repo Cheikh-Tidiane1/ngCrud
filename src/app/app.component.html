@@ -24,28 +24,6 @@
     </div>
   </div>
 </nav>
-<div class="container">
-  <div id="alertMsg">
-    <p>{{ message }}</p>
-  </div>
-  <div id="home">
-    @for(item of listeArticle ; track item.id){
-    <app-article
-      [titreArticle]="item.titreArticle"
-      [prixArticle]="item.prixArticle"
-      [description]="item.description"
-      [urlImg]="item.urlImg"
-      [altImg]="item.altImg"
-      [dispo]="item.dispo"
-      (info)="onAffiche($event)"
-    ></app-article>
-    }
-  </div>
-</div>
+<router-outlet></router-outlet>
 
-<!-- Pied de page -->
-<!-- <footer class="py-5 bg-primary">
-  <div class="container">
-    <p class="m-0 text-center text-white">Copyright &copy; Boutik Bi</p>
-  </div>
-</footer> -->
+

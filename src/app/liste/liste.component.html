@@ -1,1 +1,18 @@
-<p>liste works!</p>
+<div class="container">
+    <div id="alertMsg">
+      <p>{{ message }}</p>
+    </div>
+    <div id="home">
+      @for(item of listeArticle ; track item.id){
+      <app-article
+        [titreArticle]="item.titreArticle"
+        [prixArticle]="item.prixArticle"
+        [description]="item.description"
+        [urlImg]="item.urlImg"
+        [altImg]="item.altImg"
+        [dispo]="item.dispo"
+        (info)="onAffiche($event)"
+      ></app-article>
+      }
+    </div>
+  </div>

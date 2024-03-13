@@ -10,14 +10,7 @@ import { DataService } from './data.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit {  
-  listeArticle: any;
-  constructor(private dataservice: DataService) {}
-  ngOnInit(): void {
-    this.listeArticle = this.dataservice.listeArticle
-  }
-  message: string = '';
-  onAffiche(arg: string): string {
-    return (this.message = `Merci d'avoir Voté pour l'article: ${arg}`);
-  }
+export class AppComponent implements OnInit {
+  constructor() {}
+  ngOnInit(): void {}
 }

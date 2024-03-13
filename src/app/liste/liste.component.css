@@ -1,0 +1,15 @@
+#home{
+    display: flex;
+    flex-direction: row ;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+#alertMsg{
+    text-align: center;
+    font-size: 1.2rem;
+    color: blueviolet;
+    padding: 20px;
+}
