@@ -12,6 +12,7 @@
     <p class="card-text">
       {{ description }}
     </p>
+    <a routerLink="/details/{{idArticle}}">Voir L'article</a> <hr>
     <button
       (click)="onLike()"
       [ngClass]="{

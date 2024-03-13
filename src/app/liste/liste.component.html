@@ -5,6 +5,7 @@
     <div id="home">
       @for(item of listeArticle ; track item.id){
       <app-article
+        [idArticle]="item.id"
         [titreArticle]="item.titreArticle"
         [prixArticle]="item.prixArticle"
         [description]="item.description"

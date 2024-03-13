@@ -1,11 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule, RouterLink],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css',
 })
@@ -19,6 +20,7 @@ export class ArticleComponent implements OnInit {
   @Input() altImg: string;
   @Input() description: string;
   @Input() dispo: boolean;
+  @Input() idArticle: number ;
   totalLike: number = 0;
   color: string;
   like: boolean = true;
