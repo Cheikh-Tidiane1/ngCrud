@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 
 export class DataService {
-
+  constructor() { }
   listeArticle = [
     {
       id: 1,
@@ -35,5 +35,9 @@ export class DataService {
       dispo: true,
     },
   ];
-  constructor() { }
+  
+
+  getArticles(id: number){
+    return this.listeArticle.find(a => a.id == id) ;
+  }
 }

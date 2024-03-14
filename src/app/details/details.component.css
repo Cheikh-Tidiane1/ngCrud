@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* .imgContainer{
+    width: 600px;
+    height: 600px;
+} */
+
+/* .imgContainer img{
+    width: 100%;
+    height: auto;
+} */
+
+.infoDetails{
+    text-align: center;
+    position: relative;
+    /* top: -91px; */
+}
