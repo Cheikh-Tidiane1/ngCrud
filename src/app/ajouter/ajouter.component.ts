@@ -16,5 +16,8 @@ export class AjouterComponent implements OnInit {
   onSubmit(form: NgForm) {
     const newTitle = this.titleToAdd;
     const newPrice = this.priceToAdd;
+    console.log(newTitle);
+    console.log(newPrice);
+    
   }
 }
