@@ -13,7 +13,7 @@ export class DetailsComponent implements OnInit {
   id: number;
   prix: number;
   titre: string;
-  description: string;
+  description: string = "h";
   urlImg: string;
   
   constructor(private route: ActivatedRoute, private dataService: DataService){}
@@ -21,9 +21,8 @@ export class DetailsComponent implements OnInit {
    const  id =  this.route.snapshot.params["id"]
    this.prix = this.dataService.getArticles(id)!.prixArticle
    this.titre = this.dataService.getArticles(id)!.titreArticle
-   this.description = this.dataService.getArticles(id)!.description
+  // this.description = this.dataService.getArticles(id)!.description
    this.urlImg = this.dataService.getArticles(id)!.urlImg
   }
-
 
 }
