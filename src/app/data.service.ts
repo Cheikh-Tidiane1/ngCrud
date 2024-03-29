@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class DataService {
-  constructor() { }
+  constructor(private http: HttpClient) {}
+
   listeArticle = [
     {
       id: 1,
@@ -35,9 +38,16 @@ export class DataService {
       dispo: true,
     },
   ];
-  
 
-  getArticles(id: number){
-    return this.listeArticle.find(a => a.id == id) ;
+  // listeArticle: any = [] ;
+
+  getListFromServer(): Observable<any[]> {
+     return this.http.get<any[]>(
+      'https://ngcrud-eb606-default-rtdb.firebaseio.com/data'
+    );
+  }
+
+  getArticles(id: number) {
+    return this.listeArticle.find((a) => a.id == id);
   }
 }

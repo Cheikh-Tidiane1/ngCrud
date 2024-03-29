@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { ArticleComponent } from './article/article.component';
 import { interval , Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+// import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   standalone: true,

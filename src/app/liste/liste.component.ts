@@ -6,16 +6,26 @@ import { ArticleComponent } from '../article/article.component';
   standalone: true,
   imports: [ArticleComponent],
   templateUrl: './liste.component.html',
-  styleUrl: './liste.component.css'
+  styleUrl: './liste.component.css',
 })
 export class ListeComponent implements OnInit {
-  listeArticle: any;
+  listeArticle: any ;
   constructor(private dataservice: DataService) {}
   ngOnInit(): void {
-    this.listeArticle = this.dataservice.listeArticle
+    // this.listeArticle = this.dataservice.listeArticle
+    this.getList();
   }
   message: string = '';
   onAffiche(arg: string): string {
     return (this.message = `Merci d'avoir Voté pour l'article: ${arg}`);
+  }
+
+  getList() {
+    this.dataservice
+      .getListFromServer()
+      .subscribe((liste) => {
+        console.log(liste);
+        this.listeArticle = liste
+      });
   }
 }
