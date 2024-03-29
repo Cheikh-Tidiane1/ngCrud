@@ -41,11 +41,11 @@ export class DataService {
 
   // listeArticle: any = [] ;
 
-  getListFromServer(): Observable<any[]> {
-     return this.http.get<any[]>(
-      'https://ngcrud-eb606-default-rtdb.firebaseio.com/data'
-    );
-  }
+  // getListFromServer(): Observable<any[]> {
+  //    return this.http.get<any[]>(
+  //     'https://ngcrud-eb606-default-rtdb.firebaseio.com/data'
+  //   );
+  // }
 
   getArticles(id: number) {
     return this.listeArticle.find((a) => a.id == id);

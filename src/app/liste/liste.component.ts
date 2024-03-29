@@ -12,20 +12,19 @@ export class ListeComponent implements OnInit {
   listeArticle: any ;
   constructor(private dataservice: DataService) {}
   ngOnInit(): void {
-    // this.listeArticle = this.dataservice.listeArticle
-    this.getList();
+    this.listeArticle = this.dataservice.listeArticle
+    // this.getList();
   }
   message: string = '';
   onAffiche(arg: string): string {
     return (this.message = `Merci d'avoir Voté pour l'article: ${arg}`);
   }
 
-  getList() {
-    this.dataservice
-      .getListFromServer()
-      .subscribe((liste) => {
-        console.log(liste);
-        this.listeArticle = liste
-      });
-  }
+  // getList() {
+  //   this.dataservice
+  //     .getListFromServer()
+  //     .subscribe((liste) => {
+  //       this.listeArticle = liste
+  //     });
+  // }
 }
